@@ -1,4 +1,5 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/nao1215/go-lapras)](https://goreportcard.com/report/github.com/nao1215/go-lapras)
+[![Go Reference](https://pkg.go.dev/badge/github.com/nao1215/go-lapras.svg)](https://pkg.go.dev/github.com/nao1215/go-lapras/go-lapras)
 
 # go-lapras - LAPRAS API Goライブラリ
 go-laprasは、[LAPRAS inc.が公開しているAPI](https://github.com/lapras-inc/public-api-schema)をGo言語から実行するためのライブラリです。なお、開発者である私はLAPRAS inc.と無関係の立場です。

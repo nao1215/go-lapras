@@ -10,7 +10,7 @@ type Person struct {
 	EScore float64 `json:"e_score"`
 	// BScore is Business score
 	BScore float64 `json:"b_score"`
-	// IScore is Influense score
+	// IScore is Influences score
 	IScore float64 `json:"i_score"`
 	// QiitaArticles is slice of Qiita article
 	QiitaArticles []QiitaArticle `json:"qiita_articles"`

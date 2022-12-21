@@ -25,7 +25,7 @@ func main() {
 	fmt.Printf("Name             :%s\n", person.Name)
 	fmt.Printf("Engineering Score:%v\n", person.EScore)
 	fmt.Printf("Business Score   :%v\n", person.EScore)
-	fmt.Printf("Score Influense  :%v\n", person.EScore)
+	fmt.Printf("Score Influences :%v\n", person.EScore)
 	fmt.Println()
 
 	for _, v := range person.GithubRepositories {

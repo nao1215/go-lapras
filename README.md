@@ -24,7 +24,7 @@ GET https://lapras.com/public/<:share_id>.json
 - イベント酸化情報
 - アクティビティログ
 
-go-laprasは、上記のデータを操作するための構造体を定義しています。
+go-laprasライブラリは、上記のデータを操作するための構造体を定義しています。
 ```
 // Person is the information of one LAPRAS user
 type Person struct {

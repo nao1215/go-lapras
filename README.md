@@ -1,4 +1,5 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/nao1215/go-lapras)](https://goreportcard.com/report/github.com/nao1215/go-lapras)
+
 # go-lapras - LAPRAS API Goライブラリ
 go-laprasは、[LAPRAS inc.が公開しているAPI](https://github.com/lapras-inc/public-api-schema)をGo言語から実行するためのライブラリです。なお、開発者である私はLAPRAS inc.と無関係の立場です。
 
@@ -23,6 +24,41 @@ GET https://lapras.com/public/<:share_id>.json
 - イベント酸化情報
 - アクティビティログ
 
+go-laprasは、上記のデータを操作するための構造体を定義しています。
+```
+// Person is the information of one LAPRAS user
+type Person struct {
+	// Name is user name.
+	Name string `json:"name"`
+	// Description is personal information to be filled in by the user.
+	Description string `json:"description"`
+	// EScore is Engineering score
+	EScore float64 `json:"e_score"`
+	// BScore is Business score
+	BScore float64 `json:"b_score"`
+	// IScore is Influences score
+	IScore float64 `json:"i_score"`
+	// QiitaArticles is slice of Qiita article
+	QiitaArticles []QiitaArticle `json:"qiita_articles"`
+	// ZennArticles is slice of Zenn article
+	ZennArticles []ZennArticle `json:"zenn_articles"`
+	// BlogArticles is slice of Blog article
+	BlogArticles []BlogArticle `json:"blog_articles"`
+	// NoteArticles is slice of Note article
+	NoteArticles []NoteArticle `json:"note_articles"`
+	// SpeakerDeckSlides is slice of SpeakerDeck slide information.
+	SpeakerDeckSlides []SpeakerDeckSlide `json:"speaker_deck_slides"`
+	// GithubRepositories is slice of github repository information
+	GithubRepositories []GithubRepository `json:"github_repositories"`
+	// TeratailReplies is slice of teratail reply information
+	TeratailReplies []TeratailReply `json:"teratail_replies"`
+	// TeratailReplies is slice of event
+	Events []Event `json:"events"`
+	// Activities is slice of activity log
+	Activities []Activity `json:"activities"`
+}
+```
+
 ## go-lapras ライブラリの使い方
 ```
 package main
@@ -37,7 +73,7 @@ import (
 
 func main() {
 	lapras := lapras.NewLapras()
-	person, err := lapras.GetPerson(os.Args[1]) // 引数で受け取ったshare_id
+	person, err := lapras.GetPerson(os.Args[1]) // os.Args[1]は、share_id
 	if err != nil {
 		fmt.Fprintf(os.Stderr, err.Error())
 		os.Exit(1)
